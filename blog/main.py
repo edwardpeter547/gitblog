@@ -1,10 +1,21 @@
-from xmlrpc.client import DateTime
 from fastapi import FastAPI
 from datetime import datetime
-
+from . import models
 
 
 app = FastAPI()
+
+models.Base.metadata.create_all(models.engine)
+
+
+def get_db():
+    db = models.session_local()
+    try:
+        yield db
+        
+    finally:
+        db.close()
+        
 
 
 # ! BLOG ENDPOINT DEFINITION
