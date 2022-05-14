@@ -4,32 +4,32 @@ Gitblog is a python fastapi restfull blog API project, built with python fastapi
 ## Project Title
 FAST API BLOG
 
-# Motivation
+## Motivation
 
-# Build Status
+## Build Status
 
-# Code Style
+## Code Style
 
-# Screenshots
+## Screenshots
 
-# Tech/Framework Used
+## Tech/Framework Used
 
-# Features
+## Features
 
-# Installation
+## Installation
 The following are the installation steps:
 1. Create a Pyton virtual environment using the following command python3 -m venv "environment-name"
 2. activate virtual environment using the command "source environment-name/bin/activate" 
 3. install requirements from requirements.txt using the command "pip3 install -r requirements.txt"
 
-# API reference
+## API reference
 
-# Tests
+## Tests
 
-# How to Use?
+## How to Use?
 
-# Contribute
+## Contribute
 
-# Credits
+## Credits
 
-# License
+## License
