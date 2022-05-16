@@ -6,6 +6,6 @@ DATABASE_URL = "sqlite:///./blog.db"
 
 engine = create_engine(DATABASE_URL, echo=True)
 
-session_local = sessionmaker(engine, autocommit=False, autoflush=False)
+session_local = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 
 Base = declarative_base()
