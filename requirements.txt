@@ -2,3 +2,4 @@ fastapi
 alembic
 sqlalchemy
 uvicorn
+passlib
