@@ -5,17 +5,24 @@ class User(BaseModel):
     fullname: str
     email: str
     mobile: str
-    datecreated: str
+    password: str
+    
     
     
 class Blog(BaseModel):
     title: str
     content: str
-    datecreated: str
 
 class Category(BaseModel):
     catname: str
-    datecreated: str
+    description: str
+    
+
+class Auth(BaseModel):
+    email: str
+    password: str
+    
+    
 
 
     
