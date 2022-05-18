@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, status
-from .. import schemas, database
+from .. import schemas, database, oauth
 from sqlalchemy.orm import Session
 from .. repo.category import CategoryRepo
 
 
 
-router = APIRouter(tags=["Post Category"], prefix="/category")
+router = APIRouter(tags=["Post Category"], prefix="/category", dependencies=[Depends(oauth.get_current_user)])
 
 get_db = database.get_db
 
