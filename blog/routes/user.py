@@ -1,6 +1,6 @@
 from fastapi import APIRouter, status, Depends
 from sqlalchemy.orm import Session
-from .. import database, schemas
+from .. import database, schemas, oauth
 from .. repo.user import UserRepo
 
 
@@ -23,7 +23,7 @@ def get_user(id: int, db: Session = Depends(get_db)):
 
 # Todo: remove user with user id {id} from db:
 @router.delete('/remove/{id}', status_code = status.HTTP_200_OK)
-def del_user(id: int, db: Session = Depends(get_db)):
+def del_user(id: int, db: Session = Depends(get_db), current_user: schemas.User = Depends(oauth.get_current_user)):
     return UserRepo.delete(id=id, db=db)
 
 
@@ -35,5 +35,5 @@ def create_user(request: schemas.User, db: Session = Depends(get_db)):
 
 # Todo: update user with user id {id} from db
 @router.put('/update/{id}', status_code = status.HTTP_200_OK)
-def udpate_user(id: int, request: schemas.User, db: Session = Depends(get_db)):
+def udpate_user(id: int, request: schemas.User, db: Session = Depends(get_db), current_user: schemas.User = Depends(oauth.get_current_user)):
     return UserRepo.update(id=id, request=request, db=db)
