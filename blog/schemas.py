@@ -1,4 +1,5 @@
 from pydantic import BaseModel, typing
+from typing import Optional
 
 
 class User(BaseModel):
@@ -21,6 +22,10 @@ class Category(BaseModel):
 class Auth(BaseModel):
     email: str
     password: str
+    
+    
+class TokenData(BaseModel):
+    email: Optional[str] = None
     
     
 
