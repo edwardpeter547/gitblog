@@ -3,3 +3,5 @@ alembic
 sqlalchemy
 uvicorn
 passlib
+python-jose
+python-multipart
