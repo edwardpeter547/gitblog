@@ -1,10 +1,10 @@
 from fastapi import APIRouter, status, Depends, HTTPException
 from sqlalchemy.orm import Session
-from .. import models, database, schemas
+from .. import models, database, schemas, oauth
 from .. repo.blog import Blogrepo
 
 
-router = APIRouter(tags=["Post"], prefix="/post")
+router = APIRouter(tags=["Post"], prefix="/post", dependencies=[Depends(oauth.get_current_user)])
 
 get_db = database.get_db
 
